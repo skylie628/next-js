@@ -1,4 +1,5 @@
 import { GetStaticProps, GetStaticPropsContext } from "next";
+import Link from "next/link";
 import * as React from "react";
 
 export interface postType {
@@ -16,7 +17,9 @@ export default function PostListPage({ provinces }: PostListPageProps) {
   return (
     <ul>
       {provinces.map((province: postType) => (
-        <li key={province.code}>{province.name}</li>
+        <li key={province.code}>
+          <Link href={`/province/${province.code}`}>{province.name}</Link>
+        </li>
       ))}
     </ul>
   );

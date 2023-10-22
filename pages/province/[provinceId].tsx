@@ -11,7 +11,7 @@ export default function ProvinceDetailPage(props: any) {
     </div>
   );
 }
-export const getStaticPaths: GetStaticPaths = async () => {
+/*export const getStaticPaths: GetStaticPaths = async () => {
   //generate multiple file in advance during build time
   const rst = await fetch("https://provinces.open-api.vn/api/p/");
   const data = await rst.json();
@@ -23,7 +23,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     })),
     fallback: false,
   };
-};
+};*/
 export const getStaticProps: GetStaticProps<any> = async (
   context: GetStaticPropsContext
 ) => {
