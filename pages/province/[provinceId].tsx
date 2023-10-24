@@ -38,5 +38,6 @@ export const getStaticProps: GetStaticProps<any> = async (
     props: {
       provinces: data,
     },
+    revalidate: 5,
   };
 };

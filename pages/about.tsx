@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 //import Header from "@/components/common/header";
 import { useRouter } from "next/router";
+import MainLayout from "@/components/layout/main";
 import dynamic from "next/dynamic";
 const Header = dynamic(() => import("@/components/common/header"), {
   ssr: false,
@@ -33,6 +34,7 @@ export default function About() {
       .then((rs) => rs.json())
       .then((rs) => setProvince(rs));
   }, [pid]);
+
   return (
     <>
       <Header />
