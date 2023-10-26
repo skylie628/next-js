@@ -1,5 +1,6 @@
 import React from "react";
 import { AppProps } from "next/app";
+import '../'
 export default function App({ Component, pageProps }: AppProps) {
   console.log("app rendered");
   return (

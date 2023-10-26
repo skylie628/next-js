@@ -1,16 +1,29 @@
 import React from "react";
 import Link from "next/link";
+type todoType = {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+};
 const fetchTodos = async () => {
   //loading heavy task
-  await new Promise((resolve) => setTimeout(resolve, 5000));
-  return ["doing homework", "doing exercise"];
+  // await new Promise((resolve) => setTimeout(resolve, 100));
+  return fetch(
+    " https://jsonplaceholder.typicode.com/todos?_limit=5&_page=1"
+  ).then((rs) => rs.json());
 };
 export default async function Todos() {
-  const data = await fetchTodos();
+  const todos: Array<todoType> = await fetchTodos();
+  console.log(todos);
+
   return (
     <div>
-      {data.map((x) => (
-        <div>{x}</div>
+      {todos.map((x) => (
+        <div key={x.id} className="flex gap-3">
+          <Link href={"/todos/edit/" + x.id}>{x.id}</Link>
+          <div>{x.title}</div>
+        </div>
       ))}
       <Link href="/todos/login">todo</Link>
     </div>

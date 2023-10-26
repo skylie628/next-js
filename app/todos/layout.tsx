@@ -2,17 +2,17 @@ import React from "react";
 
 export default function layout({
   children,
-  popup,
+  modal,
 }: {
   children: React.ReactNode;
-  popup: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   console.log("rerender layout");
   return (
     <div>
       layout
       {children}
-      {popup}
+      <div className="">{modal}</div>
     </div>
   );
 }
