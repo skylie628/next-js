@@ -21,7 +21,7 @@ export default async function Todos() {
     <div>
       {todos.map((x) => (
         <div key={x.id} className="flex gap-3">
-          <Link href={"/todos/edit/" + x.id}>{x.id}</Link>
+          <Link href={`/todos/${x.id}`}>this link</Link>
           <div>{x.title}</div>
         </div>
       ))}
